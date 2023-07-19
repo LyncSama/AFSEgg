@@ -54,14 +54,15 @@ SAOD:Toggle("Auto Shiny Boost (Use Every 10 Mins)",false,function(bool)
     jeed = bool
     end)
     spawn(function()
-        while wait(600) do
+
+        while wait() do
             if jeed then
 local args = {
     [1] = "ShinyBoost"
 }
 
 game:GetService("ReplicatedStorage").Remote.UseItem:FireServer(unpack(args))
-
+ wait(600)
             end
         end                
     end)
@@ -69,14 +70,14 @@ game:GetService("ReplicatedStorage").Remote.UseItem:FireServer(unpack(args))
     eed = bool
     end)
     spawn(function()
-        while wait(600) do
+        while wait() do
             if eed then
 local args = {
     [1] = "LuckBoost"
 }
 
 game:GetService("ReplicatedStorage").Remote.UseItem:FireServer(unpack(args))
-
+wait(600)
             end
         end                
     end)
@@ -84,14 +85,14 @@ game:GetService("ReplicatedStorage").Remote.UseItem:FireServer(unpack(args))
     eoeo = bool
     end)
     spawn(function()
-        while wait(1800) do
+        while wait() do
             if eoeo then
 local args = {
     [1] = "SuperLuckBoost"
 }
 
 game:GetService("ReplicatedStorage").Remote.UseItem:FireServer(unpack(args))
-
+wait(1800)
             end
         end                
     end)
