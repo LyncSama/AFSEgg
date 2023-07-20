@@ -6,7 +6,7 @@ local serv = win:Server("AFS", "")
 local SAOD = serv:Channel("Main")
 local Misc = serv:Channel("Server")
 
-SAOD:Toggle("Anit AFK",true, function(vu)
+SAOD:Toggle("Anti AFK",true, function(vu)
 	print("Anit AFK Start")
 	local vu = game:GetService("VirtualUser")
 	game:GetService("Players").LocalPlayer.Idled:connect(function()
