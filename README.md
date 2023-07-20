@@ -269,7 +269,26 @@ wait(1800)
             Teleport()
     
          end)
-          Misc:Toggle("White Screen",_G.WhiteScreen,function(value)
+ Misc:Toggle("Ctrl + Click = TP",false,function(vu)
+     CTRL = vu
+ end)
+ local Plr = game:GetService("Players").LocalPlayer
+ local Mouse = Plr:GetMouse()
+ Mouse.Button1Down:connect(
+     function()
+         if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then
+             return
+         end
+         if not Mouse.Target then
+             return
+         end
+         if CTRL then
+             Plr.Character:MoveTo(Mouse.Hit.p)
+         end
+     end
+ )
+	  
+   Misc:Toggle("White Screen",_G.WhiteScreen,function(value)
       _G.WhiteScreen = value
     if _G.WhiteScreen == true then
       game:GetService("RunService"):Set3dRenderingEnabled(false)
