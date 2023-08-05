@@ -119,6 +119,7 @@ game:GetService("ReplicatedStorage").Remote.OpenEgg:InvokeServer(unpack(args))
                     end
                 end                
             end)
+            SAOD:Seperator()
     SAOD:Label("=== Auto Item ===")
 SAOD:Toggle("Auto Shiny Boost (Use Every 10 Mins)",false,function(bool)
     jeed = bool
